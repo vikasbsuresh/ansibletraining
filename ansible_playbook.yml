@@ -3,7 +3,7 @@
 - hosts: webserver
   become: true
   tasks:
-    - name: install webserver components
+    - name: re-install webserver components
       apt: name={{ item }} state=present update_cache=yes
       with_items:
         - apache2
