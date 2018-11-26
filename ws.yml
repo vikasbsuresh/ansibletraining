@@ -21,6 +21,6 @@
         copy: src=demo/app/ dest=/var/www/demo mode=0755
         notify: restart apache2
 
-      handlers:
-        - name: restart apache2
-          service: name=apache2 state=restarted
+    handlers:
+      - name: restart apache2
+        service: name=apache2 state=restarted
