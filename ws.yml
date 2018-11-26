@@ -25,6 +25,14 @@
         copy: src=/home/vagrant/ansible/ansibletraining/phase1_stacksetup/demo/demo.conf dest=/etc/apache2/sites-available mode=0755
         notify: restart apache2
 
+      - name: deactivate default apache sites
+        file: path:/etc/apache2/sites-enabled/000-default.conf state=absent
+        notify: restart apache2
+
+      - name: activate default apache sites
+        file: path:/etc/apache2/sites-available/demo.conf  dest=/etc/apache2/sites-enabled/000-default.conf state=link
+        notify: restart apache2
+      
 
     handlers:
       - name: restart apache2
