@@ -21,9 +21,9 @@
         copy: src=/home/vagrant/ansible/ansibletraining/phase1_stacksetup/demo/app/ dest=/var/www/demo mode=0755
         notify: restart apache2
 
-     - name: copy apache virtual host config
-       copy: src=demo/demo.conf dest=/etc/apache2/sies-available mode=0755
-       notify: restart apache2
+      - name: copy apache virtual host config
+        copy: src=demo/demo.conf dest=/etc/apache2/sites-available mode=0755
+        notify: restart apache2
        
 
     handlers:
