@@ -1,2 +1,8 @@
 ---
 # defaults file for ngnix
+sites:
+ myapp:
+   frontend: 80
+   backend: 80
+
+
